@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后台操作表单数据</title>
+	<style>
+
+		body{
+			background-color:rgb(245,245,245);
+		}
+		fieldset{
+			border-radius: 5px;
+			margin:20px;
+		}
+		#tijiao, #chongzhi,#search_link{
+			height: 30px;
+			width: 50px;
+		}
+		#marquee{
+			width: 1333px;
+			height: 19px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		#marquee span{
+			position: absolute;
+			top:0px;
+			animation: myfirst 10s ease-in-out ;
+			animation-iteration-count:1;
+    		animation-fill-mode:forwards;
+			
+		}
+
+		@-webkit-keyframes myfirst
+		{
+		   0% {left:0;}
+		   100% {left:1333px;}
+
+		}
+	</style>
+</head>
+<body>
+	<!-- <marquee behavior="slide" direction="right" id="test"></marquee> -->
+
+	<div id="marquee">
+		<span>Welcome to MoiveRecommend</span>
+	</div>
+
+	<form action="user.php" method="post" id="biaoge">
+		<fieldset>
+			<legend>必填信息</legend>
+			<label for="">您的昵称：
+				<input type="text" id="mingzi" size="30" maxlength="100" name="username">
+			</label>
+			<br>
+			<label for="">设置密码：</label>
+				<input type="password" name="password" size="30" maxlength="100" placeholder="两次密码需一致" id="mima1">
+			<label for="">确认密码：</label>
+				<input type="password" name="passwordagain" size="30" maxlength="100"
+	
+				placeholder="两次密码需一致" id="mima2">
+		</fieldset>
+			
+		<fieldset>
+			<legend>选填信息</legend>
+			
+				<label for="">所在城市：</label>
+				<select name="city" id="" >
+					<option value="Beijing">北京</option>
+					<option value="Nanjing">南京</option>
+					<option value="other">其他</option>
+				</select>
+			&nbsp&nbsp&nbsp
+			<label for="">出生日期：</label>
+			<input type="date" name="date">
+			&nbsp&nbsp&nbsp
+			<label for="">电子邮箱：</label>
+			<input type="email" name="email">
+			<br>
+			<label for="">留言：</label>
+			<br>
+			<textarea  cols="80" rows="15" name="text"></textarea>
+		</fieldset>
+		<center>
+		<input type="reset" id="chongzhi">
+		<input type="submit" id="tijiao" value="提交">
+
+		</center>
+	</form>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oForm = document.getElementById("biaoge");
+			var oRes = document.getElementById("chongzhi");
+			var oName = document.getElementById("mingzi");
+			var oM1 = document.getElementById("mima1");
+			var oM2 = document.getElementById("mima2");
+
+
+			oForm.onreset = function(){
+				var re = confirm("你确定要重置吗？");
+				if (re){
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+
+			oForm.onsubmit = function(){
+
+				if(oName.value==""||oM1.value==""||oM2.value==""){
+					alert("必填项不能为空！");
+					return false;
+				}
+				else if(oM1.value!=oM2.value)
+					{
+					alert("两次密码不一致！");
+					return false;
+				}
+				else{
+					alert("信息提交成功");
+					return true;
+                   location.href='index.html';
+
+				}
+
+			}
+
+
+}
+		
+	</script>
+</body>
+</html>
+

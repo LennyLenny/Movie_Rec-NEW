@@ -1,0 +1,859 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>为您推荐合适的电影</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: rgb(245,245,245);
+            font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+        }
+        a{
+            text-decoration: none;
+            color:rgb(0,0,0);
+        }
+        .table{
+            /*border:1px solid red;*/
+            text-align: center;
+            border-radius: 10px;
+            width:100%;
+            height:100%;
+            margin-top: 60px;
+            display:table;
+            display: none;
+        }
+        
+
+        .active{display: table;}
+
+        .tableCell{
+            display:table-cell;
+            /*border:1px solid red;*/
+            vertical-align: middle;
+            width: 180px;
+            
+        }
+
+        .table ul{
+            list-style-type: none;
+            margin:0 auto;
+            text-align: center;
+            width: 342px;
+        }
+
+        .table ul li{
+            float: left;
+            margin: 17px;
+            font-size: 20px;
+            width:28px;
+            height:28px;
+            line-height:28px;
+        }
+
+
+
+        .table ul li:hover{
+            background-color: rgb(92,184,92);
+            border-radius: 50%;
+            color: rgb(255,255,255);
+            transition:.7s;
+        }
+
+        .table ul li:hover a{
+            color:rgb(255,255,255);
+            transition:.7s;
+        }
+
+        .form_wrap{
+            /*border:1px solid red;*/
+            width:30px;
+            display: block;
+        }
+
+
+        /* 特殊样式 */
+        .recommend{
+            width: 300px;
+            height:180px;
+            border-radius:10px;
+            border:1px solid rgb(92,184,92);
+            margin:0 auto;
+        }
+
+        .recommend li{
+            position:relative;
+            left:249px;
+            top:54px;
+        }
+
+        .recommend a{
+            position:relative;
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <div class="table" id="m1">
+
+        <div class="tableCell">
+            <img src="images/DA.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>达拉斯买家俱乐部</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)" stylevalue="1">1</a></li>
+                <li><a href="javascript:void(0)" stylevalue="1">2</a></li>
+                <li><a href="javascript:void(0)" stylevalue="1">3</a></li>
+                <li><a href="javascript:void(0)" stylevalue="1">4</a></li>
+                <li><a href="javascript:void(0)" stylevalue="1">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>根据真人真事改编，讲述一个绝症病人如何绝境求生并拯救成千上万面临同样境遇人的故事</div>
+        </div>
+            
+
+    </div>
+
+
+
+
+    <div class="table" id="m2">
+        <div class="tableCell">
+            <img src="images/Emily.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>天使爱美丽</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br><br>
+            <div>奥黛丽不只有一个赫本</div>
+            
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="table" id="m3">
+        <div class="tableCell">
+            <img src="images/avata.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>阿凡达</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br><br>
+            <dov>人类首部3D电影，突破了平面电影的新纪元</div>
+        </div>
+        
+    </div>
+
+    <div class="table" id="m4">
+        <div class="tableCell">
+            <img src="images/whcl.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>卧虎藏龙</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br><br>
+            <div>相忘于江湖</div>
+        </div>
+    </div>
+
+
+    <div class="table" id="m5">
+        <div class="tableCell">
+            <img src="images/k10.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>科洛弗10号</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br><br>
+            <div>天才导演的牛刀小试，看看外星生命和变态囚禁狂谁更恐怖。</div>
+
+        </div>
+
+    </div>
+
+
+    <div class="table" id="m6">
+        <div class="tableCell">
+            <img src="images/bwbj.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>霸王别姬</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br><br>
+            <div>近代历史的丰碑，华语电影的旗帜</div>
+        </div>
+    </div>
+
+
+
+    <div class="table" id="m7">
+        <div class="tableCell">
+            <img src="images/mdhd.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>末代皇帝</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br><br>
+            <div>我一生最光荣的事，就是从旧时代的皇帝到新时代的公民-----溥仪</div>
+        </div>
+    </div>
+
+    <div class="table" id="m8">
+        <div class="tableCell">
+            <img src="images/rr.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>革命之路</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br><br>
+            <div>美式婚姻的七年之痒，平淡会是婚姻终结的杀手</div>
+        </div>
+
+    </div>
+
+    <div class="table" id="m9">
+        <div class="tableCell">
+            <img src="images/birdman.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>鸟人</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br><br>
+            <div>现实和理想的差距在光影的语言里成了直叙和蒙太奇，此外Emma和Noton的演技也是一大亮点</div>
+        </div>
+    </div>
+
+    <div class="table" id="m10">
+        <div class="tableCell">
+            <img src="images/miffy.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>白日梦想家</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br><br>
+            <div>梦想是美好的，可别让它成为了你前进路上的阻碍</div>
+        </div>
+
+    </div>
+
+
+    <div class="table" id="m11">
+        <div class="tableCell">
+            <img src="images/500day.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>与summer的500天</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>Just not that love u</div>
+        </div>
+
+    </div>
+
+
+    <div class="table" id="m12">
+        <div class="tableCell">
+            <img src="images/oneday.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>一天</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>海瑟薇最好的电影</div>
+        </div>
+
+    </div>
+
+    <div class="table" id="m13">
+        <div class="tableCell">
+            <img src="images/mal.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>K歌情人</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>All i wanna do is find a way back to love</div>
+        </div>
+
+    </div>
+
+
+    <div class="table" id="m14">
+        <div class="tableCell">
+            <img src="images/lr.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>爱你罗西</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>最好的朋友，最真的爱人</div>
+        </div>
+
+    </div>
+
+
+    <div class="table" id="m15">
+        <div class="tableCell">
+            <img src="images/jeans.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>牛仔裤的夏天</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>你失去了一切，可你还有我们</div>
+        </div>
+    </div>
+
+
+    <div class="table" id="m16">
+        <div class="tableCell">
+            <img src="images/ky.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>恐怖游轮</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>一部构思精巧的悬疑烧脑片</div>
+        </div>
+    </div>
+
+
+    <div class="table" id="m17">
+        <div class="tableCell">
+            <img src="images/darkt.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>异色童话集</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>北欧人对亲情的另一种诠释</div>
+        </div>
+    </div>
+
+
+    <div class="table" id="m18">
+        <div class="tableCell">
+            <img src="images/flipped.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>怦然心动</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>we were both young when i first saw u</div>
+        </div>
+    </div>
+
+    <div class="table" id="m19">
+        <div class="tableCell">
+            <img src="images/leapyear.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>闰年</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>苏格兰爱情喜剧，很好的沙发电影</div>
+        </div>
+    </div>
+
+    <div class="table" id="m20">
+        <div class="tableCell">
+            <img src="images/isolated.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>禁闭岛</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>真假难辨</div>
+        </div>
+    </div>
+
+
+    <div class="table" id="m21">
+        <div class="tableCell">
+            <img src="images/bm.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>断背山</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>细节做的很到位的同性电影</div>
+        </div>
+    </div>
+
+    <div class="table" id="m22">
+        <div class="tableCell">
+            <img src="images/secret.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>不能说的秘密</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>周杰伦导演处女作</div>
+        </div>
+    </div>
+
+
+    <div class="table" id="m23">
+        <div class="tableCell">
+            <img src="images/qtfb.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>窃听风暴</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>德国最伟大的电影之一</div>
+        </div>
+    </div>
+
+    <div class="table" id="m24">
+        <div class="tableCell">
+            <img src="images/srhy.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>杀人回忆</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>韩国最伟大的电影之一</div>
+        </div>
+    </div>
+
+
+    <div class="table" id="m25">
+        <div class="tableCell">
+            <img src="images/rl.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>熔炉</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>一部改变韩国法治进程的电影，因为这部电影，特别颁布了《熔炉法》</div>
+        </div>
+    </div>
+
+    <div class="table" id="m26">
+        <div class="tableCell">
+            <img src="images/rls.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>入殓师</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>久石让的旋律伴随着日式伦理成就了独具一格的艺术风格</div>
+        </div>
+    </div>
+
+    <div class="table" id="m27">
+        <div class="tableCell">
+            <img src="images/qyqx.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>千与千寻</span>
+                
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>奥斯卡最佳长篇动画，宫崎骏作品</div>
+        </div>
+    </div>
+
+    <div class="table" id="m28">
+        <div class="tableCell">
+            <img src="images/mvzjb.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>魔女宅急便</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>宫崎骏的电影总让人感觉世界是美好的</div>
+        </div>
+    </div>
+
+    <div class="table" id="m29">
+        <div class="tableCell">
+            <img src="images/pring.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>环太平洋</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>机器人与怪兽的大战，动作场面很到位</div>
+        </div>
+    </div>
+
+    <div class="table" id="m30">
+        <div class="tableCell">
+            <img src="images/msv.jpg" alt="" width="180px;" height="240px;">
+            <br>
+            <div class="span_wrap">
+                <span>美少女特工队</span>
+            </div>
+            <br><br>
+            <span>请评分：</span>
+            <br>
+            <ul>
+                <li><a href="javascript:void(0)">1</a></li>
+                <li><a href="javascript:void(0)">2</a></li>
+                <li><a href="javascript:void(0)">3</a></li>
+                <li><a href="javascript:void(0)">4</a></li>
+                <li><a href="javascript:void(0)">5</a></li>
+            </ul>
+            <br><br><br><br><br><br>
+            <div>哥特现实照进不完美的黑色童话</div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+        
+            var x = 0;
+            var array = {};
+                //随机数 success
+                var i = 0;
+                var num = 0;
+                //debugger;
+                function Madom(){
+
+                    x =  Math.random() * 10 + num * 10;
+                    x = Math.ceil(x);
+                    //array[num]=x;
+                    //alert(array[num]);
+                    //alert("array数组随机数"+array[num]);
+                    if(num >= 2){
+                        num = 0;
+                    }
+                    //alert("num"+num);
+                    num++;
+                    //alert(num);
+                    //$("#m" + x).show();
+                    //alert("num"+num+","+array[num]);
+                    //console.log("array数组随机数"+array[num]);
+                    $("#m"+x).addClass("active").siblings().removeClass("active");
+                };
+
+                Madom();
+
+            $(".table .tableCell ul li a").click(function () {
+                var point = $(this).html();
+                point = parseInt(point);
+                //console.log("i="+i);
+                $.ajax({
+                        type: 'GET',
+                        url: "get_points.php",
+                        data: {rating: point, id: x},
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            console.log(textStatus);
+                        },
+                        success: function (data) {
+
+                            Madom();
+                            //$("#m"+array[i]+"").addClass("active").siblings().removeClass("active");
+                            i++;
+                            if(i>2){
+                                 location.href="arith/arith/match.py";
+//                                
+                            }
+                            
+                        }
+                });
+            });
+        });
+
+
+        </script>
+
+</body>
+
+
+</html>

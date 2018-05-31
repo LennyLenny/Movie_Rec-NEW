@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MovieRec</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+</head>
+<body id="body">
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!--logo start-->
+
+            <button type="button" class="btn btn-secondary visible-xs" data-toggle="collapse" data-target=".row" id="search-phone">
+                <i class="fa fa-search" aria-hidden="true" id="search-btn1"></i>
+                <span>搜索</span>
+            </button>
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+
+
+            <a href="#" class="navbar-brand">Movie</a>
+        </div>
+
+        <!--Menu Items start-->
+
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <ul class="visible-xs">
+
+                </ul>
+                <li class=""><a href="#">主页</a></li>
+                <li><a href="register.html">注册</a></li>
+                <li><a href="login.html">登录</a></li>
+
+                <li class="dropdown">
+                    <a href="#" aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown">推荐 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="demo_movie.html">随机推荐</a></li>
+                        <li><a href="#iwr">我要推荐</a></li>
+                    </ul>
+                </li>
+                <li><a href="shareus.html">分享</a></li>
+            </ul>
+
+            <ul class="nav navbar-right hidden-xs">
+                <form class="form-inline my-2 my-lg-0" id="search_bar" action="findMovie.php" method="post">
+                    <input class="form-control mr-sm-2" type="search" placeholder="搜索你想要的电影" aria-label="Search" name="findByName">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+                </form>
+            </ul>
+
+        </div>
+    </div>
+
+
+    <form action="findMovie.php" class="form-inline " id="search-bar-phone" method="post">
+        <div class="row">
+        <div class="col-xs-10" >
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="搜索你想要的电影" aria-label="Search for..." name="findByName">
+                <span class="input-group-btn">
+        <button class="btn btn-secondary search-confirm-phone" type="button">Go!</button>
+      </span>
+            </div>
+        </div>
+        </div>
+    </form>
+
+
+</nav>
+
+
+<section class="container-fluid center" id="show_pic">
+
+    <div class="parallax-window text-center" data-parallax="scroll" data-z-index="-1"
+         data-image-src="images/cover_bg_1.jpg" >
+    <button style="opacity: 0" type="button" class="btn btn-success" value="开始">开始</button>
+        <h1>开始你的全新电影之旅</h1>
+
+    </div>
+
+</section>
+    <hr>
+
+    <div class="input-rec">
+
+        <section class="noti-text">
+            <h1>想知道今天你的幸运电影吗？</h1>
+            <h3>请输入关键词如喜剧、剧情（最多三个）</h3>
+        </section>
+
+        <div class="input-group container text-center">
+            <form action="find.php" class="text-center" method="post">
+                <div class="row">
+                <div class="input-box col-lg-12 text-center">
+                    <input type="text" name="findOne">
+                    <input type="text" name="findTwo">
+                    <input type="text" name="findThree">
+                </div>
+                </div>
+                <br>
+                <br>
+                <div class="row  movie-confirm">
+                    <input type="submit" value="确认" class="btn btn-success">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+<section class="container gallary">
+    <div class="row">
+        <div class="col-sm-12 col-lg-4 round-pic pic-one">
+            <div ></div>
+        </div>
+        <div class="col-sm-12 col-lg-4 round-pic pic-two">
+            <div ></div>
+        </div>
+        <div class="col-sm-12 col-lg-4 round-pic pic-three">
+            <div ></div>
+        </div>
+    </div>
+</section>
+
+<section class="recommend" id="iwr">
+    <h1>把你中意的电影分享给大家</h1>
+    <form action="movielist.php" class="container-fluid" method="post"  enctype="multipart/form-data">
+        <div class="row line-top  ">
+            <div class="wrap-name col-sm-6">
+                <input type="text" name="name" >
+                <span class="span0">名字</span>
+                <i class="fa fa-film" aria-hidden="true" id="film"></i>
+            </div>
+            <div class="wrap-year col-sm-6">
+                <input type="text" value="" name="year">
+                <span class="span1">年份</span>
+                <i class="fa fa-calendar" aria-hidden="true" id="calendar"></i>
+            </div>
+        </div>
+        <div class="container line-bottom row">
+            <div class="wrap-keyword-one ">
+                <input type="text" name="keywordOne"><span class="span2">关键字1</span>
+                <i class="fa fa-key" aria-hidden="true"></i>
+            </div>
+            <div class="wrap-keyword-two ">
+                <input type="text" name="keywordTwo" ><span class="span3">关键字2</span>
+                <i class="fa fa-key" aria-hidden="true" ></i>
+            </div>
+            <div class="wrap-keyword-three">
+                <input type="text" name="keywordThree"><span class="span4">关键字3</span>
+                <i class="fa fa-key" aria-hidden="true"></i>
+            </div>
+
+        </div>
+
+        <div class="container details">
+            <div class="cover">
+                <span>上传电影封面
+                <i class="fa fa-genderless" aria-hidden="true"></i></span>
+                <input type="file" id="cover-button" name="image">
+            </div>
+        </div>
+
+        <div class="container comments">
+            <span>推荐理由</span>
+            <input type="textarea" placeholder="把你想说的写下来吧" class="comments-about" name="content">
+        </div>
+        <div class="container  text-center submit-wrap">
+        <input type="submit" value="提交" class="btn btn-success rec-confirm" name="upload">
+        </div>
+    </form>
+</section>
+
+
+
+<a href="#top">回到顶部</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = 0;
+        function Madom(){
+            for(var i = 0 ;i<100;i++){
+                x =  Math.random() * 10 + num * 10;
+                x = Math.ceil(x);
+                if(num >= 2){
+                    num = 0;
+                }
+                num++;
+                console.log(x);
+            }
+          
+        };
+        Madom();
+    </script>
+</body>
+</html>

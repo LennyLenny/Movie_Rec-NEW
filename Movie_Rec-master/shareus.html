@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+  <meta property="og:url"           content="https://www.your-domain.com/your-page.html" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Your Website Title" />
+  <meta property="og:description"   content="Your description" />
+  <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+    <style>
+*{
+    padding:0px;
+    margin:0px;
+}
+
+
+a{
+   left:95%;
+    position: absolute;
+    top:20px;
+   
+}
+
+h1{
+    padding-left: 20px;
+    padding-top: 10px;
+    float: left;
+}
+
+img{
+    width:240px;
+    height:400px;
+}
+
+.wrap{
+    width:fit-content;
+    height:100%;
+    margin:0 auto;
+    clear: both;
+}
+
+        .box{
+            width:240px;
+            height:400px;
+            margin:80px;
+            margin-top: 120px;
+            float: left;
+        }
+
+        .box .front, .box #front1{
+            position: absolute;
+            transform:  perspective(600px) rotateY(0deg);
+            background: gray ;
+            width:240px;
+            height: 400px;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            transition:0.5s linear 0s;
+        }
+
+
+.box .back, .box #back1{
+    position: absolute;
+    transform:  perspective(600px) rotateY(180deg);
+    background: rgb(245,245,245);
+    width:240px;
+    height: 400px;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition:0.5s linear 0s;
+}
+
+
+
+.box:hover .front{
+            transform:  perspective(600px) rotateY(-180deg);
+        }
+
+
+.box:hover .back{
+            transform:perspective(600px)  rotateY(0deg);
+}
+
+
+
+.box_left,.box_right{
+    position: relative;
+}
+
+       .box:hover  #front1{
+            transform:  rotateY(-180deg);
+        }
+
+
+        .box:hover #back1{
+            transform:  rotateY(0deg);
+
+        }
+
+
+        #button1{
+            position: absolute;
+            top:450px;
+            left:50%;
+            transform: translateX(-50%);
+            width:78px;
+            height:29px;
+            background-image: url("images/fb.png");
+            cursor: pointer;
+        }
+
+        #button11{
+            border:none;
+        }
+
+        #button2{
+            position: absolute;
+            top:450px;
+            left:50%;
+            transform: translateX(-50%);
+            width:78px;
+            height:30px;
+            background-image: url("images/twitter.png");
+            cursor:pointer;
+        }
+        #button22{
+            border:none;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<h1>让你的朋友也参与到我们的电影推荐中吧！</h1>
+<div class="wrap">
+<div  class="box box_left">
+    <div class="front">
+    <img src="images/Tb.jpg" alt="">
+    </div>
+    <div class="back">
+    <img src="images/sap.jpg" alt="">
+    </div>
+    <div id="button1">
+        <div class="fb-share-button" data-href="http://localhost/www/Movie_Rec/Movie_Rec-master/index.html" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2Fwww%2FMovie_Rec%2FMovie_Rec-master%2Findex.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></div>
+       <input type="button" value="" id="button11">
+    </div>
+    
+</div>
+
+<div  class="box box_right">
+    <div class="front">
+    <img src="images/MM.jpg" alt="">
+    </div>
+    <div class="back">
+    <img src="images/redsun.jpg" alt="">
+    </div>
+    <div id='button2' class="twitter-share-button" href="https://twitter.com/intent/tweet?text=joinMoiveRec">
+    <input type="button" name="" id="button22">
+    </div>
+
+</div>
+
+</div>
+<a href="index.html">返回首页</a>
+
+
+
+   <script>
+   </script>
+</body>
+</html>
